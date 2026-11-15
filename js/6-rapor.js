@@ -1,7 +1,7 @@
 /* ====================== ATIF ====================== */
 const DEPO='https://github.com/behiccetin/karar-masasi';
-const DOI='';
-const DOI_TUM='';
+const DOI='10.5281/zenodo.24252042';
+const DOI_TUM='10.5281/zenodo.24252041';
 const KAYNAK_URL=DOI?'https://doi.org/'+DOI:DEPO;
 function atifMetinleri(){const y=ga('atif','yazilim'),sv=ga('atif','surum'),yay=DOI?'Zenodo. ':'';
   return {apa:`Çetin, B. (2026). Karar Masası (${sv} ${SURUM}) [${y}]. ${yay}${KAYNAK_URL}`,
