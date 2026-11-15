@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Bu yazılımı kullandıysanız lütfen aşağıdaki gibi kaynak gösterin. / If you use this software, please cite it as below."
+type: software
+title: "Karar Masası"
+abstract: "Çok kriterli karar verme için tarayıcıda çalışan, kurulumsuz, ücretsiz araç: AHP, BWM, ENTROPİ, CRITIC, standart sapma ve MEREC ile ağırlıklandırma; TOPSIS, VIKOR, WASPAS, EDAS, COPRAS, MOORA, ARAS, MABAC, MARCOS ve SAW ile sıralama; Spearman karşılaştırması, duyarlılık analizi, Word ve Excel raporu. / A free, install-free, browser-based tool for multi-criteria decision making."
+authors:
+  - family-names: "Çetin"
+    given-names: "Behiç"
+    orcid: "https://orcid.org/0000-0002-8926-2394"
+version: "1.0.0"
+date-released: "2026-11-15"
+license: MIT
+repository-code: "https://github.com/behiccetin/karar-masasi"
+url: "https://behiccetin.github.io/karar-masasi/"
+keywords:
+  - çok kriterli karar verme
+  - multi-criteria decision making
+  - MCDM
+  - AHP
+  - BWM
+  - TOPSIS
+  - VIKOR
+  - sensitivity analysis

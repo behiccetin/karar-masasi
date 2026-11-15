@@ -1,0 +1,116 @@
+@import "tailwindcss" source(none);
+@source "./sablon.html";
+@source "./js";
+@plugin "daisyui" { themes: false; }
+
+@plugin "daisyui/theme" {
+  name: "masa";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f4f7;
+  --color-base-300: #dfe2e8;
+  --color-base-content: #1c2230;
+  --color-primary: #8c2a3c;
+  --color-primary-content: #ffffff;
+  --color-secondary: #2f5d8a;
+  --color-secondary-content: #ffffff;
+  --color-accent: #9a6a12;
+  --color-accent-content: #ffffff;
+  --color-neutral: #242a37;
+  --color-neutral-content: #f3f4f7;
+  --color-info: #2563eb;
+  --color-info-content: #ffffff;
+  --color-success: #177245;
+  --color-success-content: #ffffff;
+  --color-warning: #a85d06;
+  --color-warning-content: #ffffff;
+  --color-error: #b42318;
+  --color-error-content: #ffffff;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.625rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "masa-gece";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #17191f;
+  --color-base-200: #1e2129;
+  --color-base-300: #2e323d;
+  --color-base-content: #e6e8ee;
+  --color-primary: #f08ca0;
+  --color-primary-content: #3a0d16;
+  --color-secondary: #8fb8e6;
+  --color-secondary-content: #0c1c2e;
+  --color-accent: #f2c06b;
+  --color-accent-content: #2b1903;
+  --color-neutral: #343a48;
+  --color-neutral-content: #e6e8ee;
+  --color-info: #7cb3ff;
+  --color-info-content: #0b1a33;
+  --color-success: #6ee7a6;
+  --color-success-content: #05240f;
+  --color-warning: #fbbf6a;
+  --color-warning-content: #2b1903;
+  --color-error: #ff8f86;
+  --color-error-content: #300808;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.375rem;
+  --radius-box: 0.625rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@layer base {
+  html,body{height:100%}
+  .rakam{font-variant-numeric:tabular-nums}
+}
+
+.ipucu-metin p+p{margin-top:.5rem}
+.ipucu-metin ol{list-style:decimal;padding-left:1.25rem;margin:.5rem 0}
+.ipucu-metin ul{list-style:disc;padding-left:1.25rem;margin:.5rem 0}
+.ipucu-metin li+li{margin-top:.15rem}
+.ipucu-metin code{font-size:.85em;background:color-mix(in oklab,currentColor 12%,transparent);padding:0 .25rem;border-radius:3px}
+
+/* Karar matrisi düzenleyicisi */
+.mtablo{border-collapse:separate;border-spacing:0;font-size:.875rem}
+.mtablo th,.mtablo td{border-bottom:1px solid var(--color-base-300);border-right:1px solid var(--color-base-300);padding:0}
+.mtablo thead th{background:var(--color-base-200);vertical-align:top}
+.mtablo th:first-child,.mtablo td:first-child{position:sticky;left:0;z-index:1;background:var(--color-base-100)}
+.mtablo thead th:first-child{background:var(--color-base-200);z-index:2;padding:.6rem .75rem;text-align:left}
+.mtablo input.hucre{width:100%;min-width:6.5rem;height:2.25rem;padding:0 .6rem;background:transparent;text-align:right;font-variant-numeric:tabular-nums;outline:none}
+.mtablo input.hucre:focus,.mtablo input.adhucre:focus{box-shadow:inset 0 0 0 2px var(--color-primary)}
+.mtablo input.hucre.bos{background:color-mix(in oklab,var(--color-warning) 10%,transparent)}
+.mtablo input.hucre.hatali{background:color-mix(in oklab,var(--color-error) 14%,transparent)}
+.mtablo input.adhucre{width:100%;min-width:9rem;height:2.25rem;padding:0 .6rem;background:transparent;outline:none;font-weight:500}
+
+/* Sonuç tabloları */
+.stablo{font-size:.85rem;border-collapse:collapse;width:100%}
+.stablo th,.stablo td{padding:.35rem .6rem;border-bottom:1px solid var(--color-base-300);white-space:nowrap}
+.stablo thead th{background:var(--color-base-200);font-weight:600;text-align:left;position:sticky;top:0}
+.stablo td.n,.stablo th.n{text-align:right;font-variant-numeric:tabular-nums}
+.stablo tr.ilk td{font-weight:600}
+.isi{border-radius:4px;display:inline-block;min-width:2rem;text-align:center;padding:0 .35rem;font-variant-numeric:tabular-nums}
+
+/* AHP ölçeği */
+.olcek{display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:2px}
+.olcek button{height:2rem;font-size:.75rem;border-radius:4px;background:var(--color-base-200);font-variant-numeric:tabular-nums}
+.olcek button:hover{background:var(--color-base-300)}
+.olcek button[aria-pressed="true"]{background:var(--color-primary);color:var(--color-primary-content);font-weight:600}
+.olcek button.orta{background:color-mix(in oklab,var(--color-base-content) 14%,transparent)}
+.olcek button.orta[aria-pressed="true"]{background:var(--color-primary)}
+
+.grafik svg{width:100%;height:auto}
+@media print{.yazdirma{display:none!important}}
+/* Karar Masası · Öğr. Gör. Dr. Behiç ÇETİN · MIT Lisansı */

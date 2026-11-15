@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="masa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Karar Masası</title>
+<meta name="description" content="Çok kriterli karar verme için tarayıcıda çalışan, kurulumsuz, ücretsiz araç: AHP, BWM, ENTROPİ, CRITIC, MEREC ile ağırlıklandırma; TOPSIS, VIKOR, WASPAS, EDAS, COPRAS, MOORA, ARAS, MABAC, MARCOS ile sıralama; duyarlılık analizi ve Word raporu.">
+<style>/*__CSS__*/</style>
+</head>
+<body class="bg-base-200 text-base-content">
+
+<div id="sekmeUyari" class="hidden alert alert-warning rounded-none justify-center text-sm"><span data-t="otherTab"></span><button class="btn btn-sm" id="yenile" data-t="reload"></button></div>
+
+<div class="flex flex-col h-screen min-w-0">
+  <header class="navbar min-h-14 bg-base-100 border-b border-base-300 gap-2 px-3 yazdirma">
+    <div class="flex items-center gap-1 min-w-0 flex-1">
+      <button class="btn btn-ghost btn-sm btn-square" data-sekme="giris" data-ta="tabHome" id="evBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg></button>
+      <input id="projeAd" class="input input-ghost input-sm font-semibold text-base w-full min-w-28 max-w-96" data-ta="projectName">
+      <span id="kayitDurum" class="text-xs text-base-content/50 hidden 2xl:inline whitespace-nowrap"></span>
+    </div>
+    <nav class="hidden xl:flex">
+      <div role="tablist" class="tabs tabs-box tabs-sm" id="sekmeler">
+        <button role="tab" class="tab" data-sekme="matris"><span data-t="tabMatrix"></span><span class="badge badge-xs badge-warning ml-1 hidden" id="rozetMatris"></span></button>
+        <button role="tab" class="tab" data-sekme="agirlik"><span data-t="tabWeights"></span><span class="badge badge-xs badge-warning ml-1 hidden" id="rozetAgirlik"></span></button>
+        <button role="tab" class="tab" data-sekme="sirala"><span data-t="tabRanking"></span></button>
+        <button role="tab" class="tab" data-sekme="karsilastir"><span data-t="tabCompare"></span></button>
+        <button role="tab" class="tab" data-sekme="duyarlilik"><span data-t="tabSensitivity"></span></button>
+        <button role="tab" class="tab" data-sekme="rapor"><span data-t="tabReport"></span></button>
+      </div>
+    </nav>
+    <div class="flex items-center gap-1 flex-1 justify-end">
+      <div class="join">
+        <button class="btn btn-ghost btn-sm btn-square join-item" id="geriAl" data-ta="undo" disabled>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></button>
+        <button class="btn btn-ghost btn-sm btn-square join-item" id="yinele" data-ta="redo" disabled>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 14 5-5-5-5"/><path d="M20 9H9a5 5 0 0 0 0 10h3"/></svg></button>
+      </div>
+      <select id="dilSec" class="select select-sm w-28 hidden sm:inline-flex" data-ta="language"></select>
+      <label class="swap swap-rotate btn btn-ghost btn-sm btn-square" data-ta="theme">
+        <input type="checkbox" id="temaSec" class="theme-controller" value="masa-gece">
+        <svg class="swap-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="swap-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </label>
+      <button class="btn btn-ghost btn-sm btn-square" id="genelYardim" data-ta="help">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></button>
+      <div class="dropdown dropdown-end">
+        <button tabindex="0" class="btn btn-sm btn-neutral" data-t="project"></button>
+        <ul tabindex="0" class="dropdown-content menu z-40 mt-2 w-72 rounded-box bg-base-100 border border-base-300 p-2 shadow-lg">
+          <li class="sm:hidden"><label class="flex flex-col items-start gap-1"><span class="text-xs" data-t="language"></span><select id="dilSecM" class="select select-xs w-full"></select></label></li>
+          <li class="menu-title" data-t="menuFile"></li>
+          <li><button data-arac="yeni" data-t="newProject"></button></li>
+          <li><button data-arac="ac" data-t="openProject"></button></li>
+          <li><button data-arac="kaydet" data-t="saveProject"></button></li>
+          <li><button data-arac="ornek" data-t="loadSample"></button></li>
+          <li class="menu-title" data-t="menuTools"></li>
+          <li><button data-arac="ice" data-t="importMatrix"></button></li>
+          <li><button data-arac="ayar" data-t="toolSettings"></button></li>
+          <li><button data-arac="gunluk" data-t="toolLog"></button></li>
+          <li class="menu-title" data-t="languageFiles"></li>
+          <li><button data-arac="dilSablon" data-t="langTemplate"></button></li>
+          <li><button data-arac="dilYukle" data-t="langLoad"></button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="xl:hidden bg-base-100 border-b border-base-300 px-2 py-2 overflow-x-auto yazdirma">
+    <div role="tablist" class="tabs tabs-box tabs-xs w-max" id="sekmelerMobil"></div>
+  </div>
+
+  <main class="flex-1 min-h-0 overflow-auto flex flex-col" id="ana">
+    <!-- ANA SAYFA -->
+    <section id="s-giris" class="sekme hidden"></section>
+
+    <!-- KARAR MATRİSİ -->
+    <section id="s-matris" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-5 w-full">
+        <div class="flex flex-wrap items-end gap-3">
+          <div class="flex-1 min-w-60"><h1 class="text-2xl font-semibold flex items-center gap-1"><span data-t="tabMatrix"></span><span data-ip="matris"></span></h1>
+            <p class="text-sm text-base-content/65 mt-1" id="matrisOzet"></p></div>
+          <button class="btn" id="mYapistir"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg><span data-t="pasteTable"></span></button>
+          <button class="btn btn-primary" data-arac="ice"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-t="importMatrix"></span></button>
+        </div>
+        <div id="mUyari"></div>
+        <div class="bg-base-100 border border-base-300 rounded-box">
+          <div class="px-4 py-3 border-b border-base-300 flex flex-wrap items-center gap-2">
+            <button class="btn btn-sm" id="mAltEkle"><span aria-hidden="true">+</span><span data-t="addAlternative"></span></button>
+            <button class="btn btn-sm" id="mKritEkle"><span aria-hidden="true">+</span><span data-t="addCriterion"></span></button>
+            <span class="text-xs text-base-content/60 ml-auto" data-t="matrixKeys"></span><span data-ip="matrisTus"></span>
+          </div>
+          <div id="matrisTablo" class="overflow-x-auto"></div>
+        </div>
+        <div class="bg-base-100 border border-base-300 rounded-box p-4">
+          <div class="flex items-center gap-1 mb-2"><h2 class="font-semibold" data-t="matrixStats"></h2><span data-ip="istatistik"></span></div>
+          <div id="matrisIstat" class="overflow-x-auto"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AĞIRLIKLAR -->
+    <section id="s-agirlik" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-5 w-full">
+        <div class="flex flex-wrap items-end gap-3">
+          <div class="flex-1 min-w-60"><h1 class="text-2xl font-semibold flex items-center gap-1"><span data-t="tabWeights"></span><span data-ip="agirlik"></span></h1>
+            <p class="text-sm text-base-content/65 mt-1" data-t="weightsLead"></p></div>
+        </div>
+        <div id="aYontemler" class="grid grid-cols-2 lg:grid-cols-4 gap-2" role="radiogroup"></div>
+        <div class="grid xl:grid-cols-[minmax(0,1fr)_24rem] gap-5">
+          <div id="aPanel" class="space-y-4 min-w-0"></div>
+          <div class="space-y-4">
+            <div class="bg-base-100 border border-base-300 rounded-box p-4">
+              <div class="flex items-center gap-1 mb-3"><h2 class="font-semibold mr-auto" data-t="weightsResult"></h2><button class="btn btn-xs" id="aGrafikPng">PNG</button></div>
+              <div id="aSonuc"></div>
+            </div>
+          </div>
+        </div>
+        <div id="aAdimlar" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- SIRALAMA -->
+    <section id="s-sirala" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-5 w-full">
+        <div class="flex flex-wrap items-end gap-3">
+          <div class="flex-1 min-w-60"><h1 class="text-2xl font-semibold flex items-center gap-1"><span data-t="tabRanking"></span><span data-ip="sirala"></span></h1>
+            <p class="text-sm text-base-content/65 mt-1" data-t="rankingLead"></p></div>
+        </div>
+        <div class="bg-base-100 border border-base-300 rounded-box p-4 space-y-3">
+          <div class="flex items-center gap-1"><h2 class="font-semibold" data-t="methodsChosen"></h2><span data-ip="yontemSec"></span></div>
+          <div id="sYontemler" class="flex flex-wrap gap-2"></div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 border-t border-base-300 text-sm">
+            <label class="flex items-center gap-2"><span data-t="mainMethod"></span><select id="sAna" class="select select-sm w-40"></select><span data-ip="anaYontem"></span></label>
+            <label class="flex items-center gap-2"><span>VIKOR v</span><input id="sV" type="number" min="0" max="1" step="0.05" class="input input-sm w-20"><span data-ip="vikorV"></span></label>
+            <label class="flex items-center gap-2"><span>WASPAS λ</span><input id="sL" type="number" min="0" max="1" step="0.05" class="input input-sm w-20"><span data-ip="waspasL"></span></label>
+          </div>
+        </div>
+        <div id="sUyari"></div>
+        <div id="sOzet"></div>
+        <div id="sSonuclar" class="space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- KARŞILAŞTIRMA -->
+    <section id="s-karsilastir" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-5 w-full">
+        <div><h1 class="text-2xl font-semibold flex items-center gap-1"><span data-t="tabCompare"></span><span data-ip="karsilastir"></span></h1>
+          <p class="text-sm text-base-content/65 mt-1" data-t="compareLead"></p></div>
+        <div id="kUyari"></div>
+        <div class="bg-base-100 border border-base-300 rounded-box">
+          <div class="px-4 py-3 border-b border-base-300 flex items-center gap-1"><h2 class="font-semibold" data-t="rankTable"></h2><span data-ip="siraTablo"></span></div>
+          <div id="kSira" class="overflow-x-auto"></div>
+        </div>
+        <div class="bg-base-100 border border-base-300 rounded-box">
+          <div class="px-4 py-3 border-b border-base-300 flex items-center gap-1"><h2 class="font-semibold" data-t="spearmanTitle"></h2><span data-ip="spearman"></span></div>
+          <div id="kSpearman" class="overflow-x-auto"></div>
+          <p class="px-4 py-3 text-sm text-base-content/70" id="kSpearmanOzet"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DUYARLILIK -->
+    <section id="s-duyarlilik" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-5 w-full">
+        <div><h1 class="text-2xl font-semibold flex items-center gap-1"><span data-t="tabSensitivity"></span><span data-ip="duyarlilik"></span></h1>
+          <p class="text-sm text-base-content/65 mt-1" data-t="sensLead"></p></div>
+        <div class="bg-base-100 border border-base-300 rounded-box p-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <label class="flex items-center gap-2"><span data-t="sensMethod"></span><select id="dYontem" class="select select-sm w-40"></select></label>
+          <label class="flex items-center gap-2"><span data-t="sensChanges"></span><input id="dOran" class="input input-sm w-56" data-tp="sensChangesPh"><span data-ip="dOran"></span></label>
+        </div>
+        <div id="dUyari"></div>
+        <div id="dOzet"></div>
+        <div class="bg-base-100 border border-base-300 rounded-box">
+          <div class="px-4 py-3 border-b border-base-300 flex items-center gap-1"><h2 class="font-semibold" data-t="sensTable"></h2><span data-ip="dTablo"></span></div>
+          <div id="dTablo" class="overflow-x-auto max-h-[36rem]"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAPOR -->
+    <section id="s-rapor" class="sekme hidden">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 w-full grid xl:grid-cols-[minmax(0,1fr)_24rem] gap-6">
+        <div class="space-y-4 min-w-0">
+          <div class="bg-base-100 border border-base-300 rounded-box p-5">
+            <div class="flex items-center gap-2 mb-3"><h1 class="text-xl font-semibold mr-auto flex items-center gap-1"><span data-tg="yontem.baslik"></span><span data-ip="yontemMetni"></span></h1><button class="btn btn-xs" id="yontemKopya" data-tg="atif.kopyala"></button></div>
+            <p class="text-xs text-base-content/60 mb-3" data-tg="yontem.not"></p>
+            <div id="yontemKart"></div>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div class="bg-base-100 border border-base-300 rounded-box p-5 space-y-3">
+            <h2 class="font-semibold flex items-center gap-1"><span data-t="downloads"></span><span data-ip="rapor"></span></h2>
+            <div id="rUyari"></div>
+            <button class="btn btn-primary btn-block" id="rWord" data-t="wordReport"></button>
+            <button class="btn btn-block" id="rXlsx" data-t="xlsxReport"></button>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="btn btn-sm" id="rCsv" data-t="csvResults"></button>
+              <button class="btn btn-sm" data-arac="kaydet" data-t="saveProject"></button>
+            </div>
+            <label class="flex items-center justify-between gap-2 text-sm pt-2 border-t border-base-300"><span data-t="reportSteps"></span><input type="checkbox" class="toggle toggle-sm" id="rAdim"></label>
+          </div>
+          <div class="bg-base-100 border border-base-300 rounded-box p-5">
+            <div class="flex items-center gap-2 mb-2"><h2 class="font-semibold mr-auto" data-tg="atif.baslik"></h2><button class="btn btn-xs btn-ghost" data-arac="atif" data-tg="atif.dugme"></button></div>
+            <p class="text-sm text-base-content/70" data-tg="atif.ne"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-auto text-xs text-base-content/60 px-4 sm:px-6 py-3 border-t border-base-300 bg-base-100 yazdirma">
+      <p data-t="privacy"></p>
+      <p class="mt-1"><b>Karar Masası</b> v<span id="surumYaz"></span>. <span data-t="credit"></span> <b>Öğr. Gör. Dr. Behiç ÇETİN</b>. © 2026, <span data-t="license"></span>.<span id="doiYaz"></span></p>
+    </footer>
+  </main>
+</div>
+
+<div id="ipucuKutu" class="hidden fixed z-[70] w-80 max-w-[calc(100vw-1rem)] rounded-box bg-neutral text-neutral-content text-sm leading-relaxed p-3 shadow-lg ipucu-metin" role="tooltip"></div>
+<dialog id="pencere" class="modal">
+  <div class="modal-box max-w-2xl">
+    <div class="flex items-center gap-1 mb-3"><h3 class="font-semibold text-lg" id="pBaslik"></h3><span id="pYardim"></span></div>
+    <div id="pIcerik"></div>
+    <div class="modal-action" id="pDugmeler"></div>
+  </div>
+  <form method="dialog" class="modal-backdrop"><button>x</button></form>
+</dialog>
+<div id="tost" class="toast toast-end z-[80]"></div>
+<input type="file" id="dosyaSec" class="hidden">
+
+<script>const GOMULU_DILLER=/*__DILLER__*/{};</script>
+<script>
+//__JS__
+</script>
+</body>
+</html>
