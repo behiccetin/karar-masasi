@@ -1,5 +1,7 @@
 # Karar Masası / Decision Desk
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24252042.svg)](https://doi.org/10.5281/zenodo.24252042)
+
 Çok kriterli karar verme (ÇKKV) için tarayıcıda çalışan, kurulumsuz, ücretsiz araç. Karar matrisini Excel'den alır; kriter ağırlıklarını uzman yargısıyla ya da veriden hesaplar; alternatifleri on yöntemle sıralar; yöntemleri karşılaştırır, duyarlılık analizi yapar ve her adımın tablosunu Word ve Excel raporuna döker. Tek bir HTML dosyasıdır; internet bağlantısı kullanmaz, veriler bilgisayardan çıkmaz.
 
 A free, install-free, browser-based tool for multi-criteria decision making (MCDM). It takes the decision matrix from Excel, derives criterion weights from expert judgement or from the data, ranks the alternatives with ten methods, compares the methods, runs a sensitivity analysis and exports every step to Word and Excel. It is a single HTML file, works offline, and data never leaves your computer.
@@ -57,7 +59,10 @@ Web sürümü de verileri yalnızca tarayıcınızda tutar; hiçbir sunucuya gö
 
 Karar Masası'nı kullandıysanız lütfen kaynak gösterin. Araçtaki **Atıf** düğmesi APA, ISNAD ve BibTeX biçimlerini verir.
 
-> Çetin, B. (2026). *Karar Masası* (Sürüm 1.0.0) [Bilgisayar yazılımı]. https://github.com/behiccetin/karar-masasi
+> Çetin, B. (2026). *Karar Masası* (Sürüm 1.0.0) [Bilgisayar yazılımı]. Zenodo. https://doi.org/10.5281/zenodo.24252042
+
+- DOI, sürüm 1.0.0 / version 1.0.0: [10.5281/zenodo.24252042](https://doi.org/10.5281/zenodo.24252042)
+- DOI, tüm sürümler / all versions: [10.5281/zenodo.24252041](https://doi.org/10.5281/zenodo.24252041)
 
 ## Lisans / License
 
