@@ -17,7 +17,7 @@ const uyariHtml=(m,tur='warning')=>m?`<div role="alert" class="alert alert-${tur
 const hataMetni=r=>r&&r.hata?t('err_'+r.hata,...(r.hataArg||[])):'';
 /* Yatay çubuk grafik (raporda da kullanılır; renkler sabit, arka plan beyaz). */
 function cubukSvg(etiket,deger,o={}){const n=etiket.length,W=680,sol=Math.min(230,16+Math.max(...etiket.map(e=>String(e).length))*7.2),sag=86,ust=o.baslik?40:14,sat=26,H=ust+n*sat+14;
-  const mx=Math.max(...deger.map(Math.abs),1e-12);const g=W-sol-sag;const ri=o.renk||'#8c2a3c';
+  const mx=Math.max(...deger.map(Math.abs),1e-12);const g=W-sol-sag;const ri=o.renk||'#0f62fe';
   let s=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="Calibri, Segoe UI, Arial, sans-serif" font-size="13"><rect width="${W}" height="${H}" fill="#fff"/>`;
   if(o.baslik)s+=`<text x="16" y="24" font-size="15" font-weight="700" fill="#1c2230">${esc(o.baslik)}</text>`;
   etiket.forEach((e,i)=>{const y=ust+i*sat,v=deger[i],bw=Math.max(1,Math.abs(v)/mx*g);const ad=String(e).length>30?String(e).slice(0,29)+'…':String(e);

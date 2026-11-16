@@ -20,7 +20,9 @@ A free, install-free, browser-based tool for multi-criteria decision making (MCD
 - Her yöntemin bütün ara tabloları ekranda, Word'de ve Excel'de
 - Tablo ve şekil numaralı Word raporu; atıflarıyla yöntem bölümü taslağı ve APA kaynakçası
 - Excel çalışma kitabı: her yöntem ayrı sayfada, sayılar değer olarak
-- Geri al ve yinele, tarayıcıda otomatik kayıt, proje dosyası
+- Geri al ve yinele, tarayıcıda otomatik kayıt, `.krit` çalışma dosyası: kaydedip sonra yükleyince kaldığınız sekme ve uzmandan devam edersiniz (eski `.karar.json` dosyaları da açılır)
+- Yardım merkezi (arama, adım adım anlatım, sözlük) ve Türkçe olmayan terimlerin (AHP, CR, TOPSIS gibi) üzerine gelince açılan kısa açıklamalar
+- Carbon Design System'e göre tasarım: açık ve koyu tema, IBM Plex Sans
 - Türkçe ve İngilizce; topluluk yeni dil ekleyebilir (bkz. CONTRIBUTING.md)
 
 ## Doğrulama / Verification
@@ -50,8 +52,8 @@ Web sürümü de verileri yalnızca tarayıcınızda tutar; hiçbir sunucuya gö
 | Klasör | İçerik |
 |---|---|
 | `sablon.html` | Arayüz iskeleti |
-| `stil.css` | daisyUI 5 ve Tailwind 4 tema tanımları |
-| `js/` | Uygulama kodu (`2-hesap.js` bütün yöntemlerin hesap çekirdeği) |
+| `stil.css` | Carbon belirteçleriyle daisyUI 5 ve Tailwind 4 tema tanımları |
+| `js/` | Uygulama kodu (`2-hesap.js` bütün yöntemlerin hesap çekirdeği, `8-yardim.js` terim açıklamaları ve yardım merkezi) |
 | `diller/` | Dil dosyaları (topluluk katkısına açık) |
 | `build.py` | Hepsini tek HTML dosyasında birleştirir (`dist/` ve `index.html`) |
 

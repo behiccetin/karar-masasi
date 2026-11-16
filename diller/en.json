@@ -23,8 +23,8 @@
  "menuFile": "File",
  "menuTools": "Tools",
  "newProject": "New project",
- "openProject": "Open project file",
- "saveProject": "Download project file",
+ "openProject": "Open work (.krit)",
+ "saveProject": "Save work (.krit)",
  "loadSample": "Open sample project",
  "importMatrix": "Import Excel or CSV",
  "toolSettings": "Settings",
@@ -38,8 +38,8 @@
  "otherTab": "This project is open in another tab too. This tab was locked to prevent data loss.",
  "reload": "Reload",
  "saved": "Saved",
- "saveFail": "Could not save to the browser. Download the project file as a backup.",
- "privacy": "Your data never leaves this browser: nothing is sent to a server and it is stored on this computer only. Download the project file regularly as a backup.",
+ "saveFail": "Could not save to the browser. Save your work as a .krit file as a backup.",
+ "privacy": "Your data never leaves this browser: nothing is sent to a server and it is stored on this computer only. Save your work to a .krit file regularly as a backup.",
  "credit": "System architect and developer:",
  "license": "MIT License",
  "close": "Close",
@@ -53,12 +53,12 @@
  "yes": "yes",
  "no": "no",
  "copied": "Copied to clipboard.",
- "newProjectQ": "The current project will be replaced by an empty one in this browser. Make sure you have downloaded the project file first. Continue?",
+ "newProjectQ": "The current work will be replaced by an empty one in this browser. Make sure you have saved it first. Continue?",
  "sampleQ": "The sample project will replace the current one. You can undo with Ctrl+Z. Continue?",
  "sampleLoaded": "Sample project opened. The data are fictional.",
- "projectSaved": "Project file downloaded.",
- "projectLoaded": "Project opened.",
- "badProject": "This is not a Karar Masası project file.",
+ "projectSaved": "Work saved as a .krit file. You can continue where you left off by opening this file.",
+ "projectLoaded": "Work loaded. You can continue where you left off.",
+ "badProject": "This is not a Karar Masası work file (.krit).",
  "badFile": "Could not read the file.",
  "pngFail": "Could not create the image.",
  "decimals": "Decimal places shown",
@@ -515,7 +515,7 @@
   "genel": "How to use Karar Masası"
  },
  "helpBody": {
-  "genel": "<p><b>1. Decision matrix.</b> Rows are alternatives, columns are criteria. Under each criterion choose <b>Benefit</b> (higher is better) or <b>Cost</b> (lower is better). You can copy a block from Excel and paste it into any cell, or use <b>Paste table</b> to bring it in with its headers.</p><p><b>2. Weights.</b> Choose a method. For AHP and BWM enter the judgements of each expert; the objective methods (Entropy, CRITIC, standard deviation, MEREC) are calculated from the matrix automatically.</p><p><b>3. Ranking.</b> Tick the methods you want. The main method is the one highlighted in the summary and the report.</p><p><b>4. Comparison and sensitivity.</b> See how well the methods agree and how much the result moves when the weights change.</p><p><b>5. Report.</b> Get a Word report, an Excel workbook and a draft method section.</p><p>Everything is saved in this browser. Use <b>Project &gt; Download project file</b> to back up or move to another computer. <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</p>"
+  "genel": "<p><b>1. Decision matrix.</b> Rows are alternatives, columns are criteria. Under each criterion choose <b>Benefit</b> (higher is better) or <b>Cost</b> (lower is better). You can copy a block from Excel and paste it into any cell, or use <b>Paste table</b> to bring it in with its headers.</p><p><b>2. Weights.</b> Choose a method. For AHP and BWM enter the judgements of each expert; the objective methods (Entropy, CRITIC, standard deviation, MEREC) are calculated from the matrix automatically.</p><p><b>3. Ranking.</b> Tick the methods you want. The main method is the one highlighted in the summary and the report.</p><p><b>4. Comparison and sensitivity.</b> See how well the methods agree and how much the result moves when the weights change.</p><p><b>5. Report.</b> Get a Word report, an Excel workbook and a draft method section.</p><p>Everything is saved in this browser. Use <b>Project &gt; Save work (.krit)</b> to back up or move to another computer. <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</p>"
  },
  "ipucu": {
   "matris": "<p>In the decision matrix each row is an <b>alternative</b> (option) and each column a <b>criterion</b>. A cell holds the alternative's value on that criterion.</p><p>Qualitative criteria can be turned into numbers with a score such as 1-10.</p>",
@@ -550,5 +550,102 @@
   "y_mabac": "<p>A border area (G) is found for each criterion as the geometric mean of the alternatives. A higher total distance S from this border is better.</p>",
   "y_marcos": "<p>Ideal (AI) and anti-ideal (AAI) solutions are added to the matrix. The alternatives' utility degrees relative to them (K⁺, K⁻) are combined in a utility function; a higher f(K) is better.</p>",
   "y_saw": "<p>The weighted sum of linearly normalised values. The simplest method and a reference point for the others.</p>"
+ },
+ "tabHelp": "Help",
+ "loadWorkQ": "The work in the file will replace the current work. You can undo with Ctrl+Z. Continue?",
+ "nextStep": "Next: {0}",
+ "prevStep": "Previous: {0}",
+ "terimYok": "No explanation found.",
+ "helpSearch": "Search help",
+ "yardim": {
+  "baslik": "Help center",
+  "alt": "Learn Karar Masası step by step. Type a topic or choose one from the list on the left.",
+  "sonucYok": "No topic matches your search.",
+  "agirlikYontemleri": "Weighting methods",
+  "siralamaYontemleri": "Ranking methods",
+  "bolumler": {
+   "basla": {
+    "b": "Getting started",
+    "h": "<p>Karar Masası is an install-free workbench for comparing and ranking alternatives on several criteria. Your data never leaves this computer.</p><p><b>Shortest way:</b> choose <b>Open sample project</b> in the Project menu and walk through the tabs from left to right; then start a <b>New project</b> with your own data.</p><ol><li><b>Decision matrix.</b> Enter alternatives and criteria and choose each criterion's direction.</li><li><b>Weights.</b> Decide how important each criterion is.</li><li><b>Ranking.</b> Choose methods and see the order of alternatives.</li><li><b>Comparison.</b> See how well the methods agree.</li><li><b>Sensitivity.</b> Test how stable the result is when weights change.</li><li><b>Report.</b> Get the Word report, the Excel file and a methods section draft.</li></ol><p><b>Small helpers</b></p><ul><li>Hover over dotted-underlined terms (such as AHP, CR, TOPSIS) to see a short explanation.</li><li>The <b>?</b> button beside a heading opens detail for that section.</li><li><kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes the last action, <kbd>Ctrl</kbd>+<kbd>Y</kbd> redoes it.</li><li>At any time, save your work to a <code>.krit</code> file with the disk icon in the top bar; later, continue where you left off with that file.</li></ul>"
+   },
+   "dosya": {
+    "b": "Saving and resuming work",
+    "h": "<p>Karar Masası keeps your work in two places.</p><p><b>1. Automatic browser save.</b> Shortly after every change it is saved in this browser. If you close and reopen the page you continue where you left off. If you clear browser data or switch computers, this copy is gone.</p><p><b>2. Work file (.krit).</b> Click the disk icon in the top bar or <b>Project &gt; Save work (.krit)</b>. The file holds the matrix, weight judgements, method choices, settings, the log, and which tab and expert you were on.</p><p><b>Continue where you left off.</b> Load it with <b>Project &gt; Open work (.krit)</b> or drag the file onto the page. Karar Masası takes you to the tab you saved on.</p><ul><li>You can move the file to another computer by e-mail, cloud drive or USB stick.</li><li>Older <code>.karar.json</code> project files also open.</li><li>The file is plain text (JSON); it contains only what you entered and is never sent anywhere.</li><li>Loading a work file replaces the current work; you are asked first. You can undo with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.</li><li>On a shared computer, save your work and clear browser data when you finish.</li></ul>"
+   },
+   "matris": {
+    "b": "Decision matrix",
+    "h": "<p>Rows are <b>alternatives</b> (your options), columns are <b>criteria</b> (your measures). Enter measured or scored values in the cells.</p><p><b>Direction.</b> With the button under each criterion choose <b>Benefit</b> (higher is better, e.g. a quality score) or <b>Cost</b> (lower is better, e.g. price or distance). A wrong direction reverses the result.</p><p><b>Ways to enter data</b></p><ul><li>Type in a cell; <kbd>Enter</kbd> and the down arrow move down, arrow keys move sideways. <kbd>Enter</kbd> on the last row adds an alternative.</li><li>Copy a block in Excel and paste it into a cell; rows and columns are added when needed.</li><li><b>Paste table</b> takes headers too; <b>Import Excel or CSV</b> reads .xlsx and .csv files. If the row after the header says Benefit or Cost, directions are recognised automatically.</li></ul><p><b>Note.</b> With an empty cell no calculation runs. Some methods do not accept zero or negative values; the screen then tells you which method fails and why. Use a comma or a point for decimals.</p>"
+   },
+   "agirlik": {
+    "b": "Weights",
+    "h": "<p>A weight shows how important a criterion is in the decision; weights sum to 1. There are three families:</p><ul><li><b>Basic:</b> equal weights. Every criterion is equally important.</li><li><b>Subjective (expert judgement):</b> direct rating, AHP, BWM. You or experts decide the importance.</li><li><b>Objective (from data):</b> entropy, CRITIC, standard deviation, MEREC. Importance is computed from the spread of the data in the matrix; no experts needed.</li></ul><p><b>With AHP.</b> Add an expert; for each pair of criteria mark which is more important and by how much on the 1-9 scale. The middle of the scale is \"equally important\"; the left half favours the left criterion and the right half the right one. The consistency ratio <b>CR</b> is shown above; 0.10 or less is acceptable. Above that, Karar Masası suggests which judgement to change. Judgements of several experts are combined by <b>AIJ</b> (combine matrices) or <b>AIP</b> (combine weights).</p><p><b>With BWM.</b> First choose the most important (best) and least important (worst) criterion; then compare the other criteria with these two on the 1-9 scale. It needs far fewer judgements than AHP. ξᴸ and CRᴵ are shown for consistency.</p><p><b>Which to choose?</b> With expert opinion, AHP or BWM; without it, one or several objective methods. If results differ a lot, look at the Comparison and Sensitivity tabs.</p>"
+   },
+   "sirala": {
+    "b": "Ranking",
+    "h": "<p>Each method you choose scores and ranks the alternatives using the weights and the matrix. Choosing several methods lets you see whether the result depends on the method.</p><ul><li><b>Main method:</b> the one shown on the summary card, in the chart and in the report.</li><li><b>Intermediate tables:</b> under each method, <b>Show intermediate steps</b> holds every table from normalisation to the final score. It is also suitable for your paper.</li><li><b>VIKOR v</b> and <b>WASPAS λ</b> are the methods' own parameters; 0.5 is common.</li></ul>"
+   },
+   "karsilastir": {
+    "b": "Comparison",
+    "h": "<p>Methods process the same data with different assumptions; ranks may not be identical. This tab shows each alternative's rank by method, its mean rank and overall rank.</p><p>The <b>Spearman</b> rank correlation shows how well two methods' ranks agree: 1 is full agreement, 0 no relation, negative means reversed order. Above 0.8 is usually considered strong agreement.</p>"
+   },
+   "duyarlilik": {
+    "b": "Sensitivity analysis",
+    "h": "<p>Weights are not exact. This tab changes each criterion's weight in turn by the rates you give (for example -50, -25, 25, 50 percent), rescales the other weights proportionally and shows how the ranking moves.</p><ul><li>Yellow cells are alternatives whose rank changed.</li><li>If the \"stayed first\" count is high, your result is robust.</li><li>ρ is the Spearman agreement of the changed ranking with the original.</li></ul>"
+   },
+   "rapor": {
+    "b": "Report and outputs",
+    "h": "<ul><li><b>Word report:</b> numbered tables, charts, the methods section and an APA reference list.</li><li><b>Excel workbook:</b> each method on its own sheet, numbers as values.</li><li><b>Results (CSV):</b> scores and ranks only.</li><li><b>Methods section draft:</b> copy it into your paper and edit it in your own words.</li><li><b>Citation:</b> the Cite button on the home page gives APA, ISNAD and BibTeX formats.</li></ul>"
+   },
+   "sss": {
+    "b": "Frequently asked",
+    "h": "<p><b>CR is above 0.10, what now?</b> Review the comparison named in the warning; moving towards the suggested value raises consistency. With several experts, check them one by one.</p><p><b>Methods gave different first places.</b> This is normal. Look at the mean rank and Spearman values; the sensitivity analysis shows which alternative is stable.</p><p><b>A method does not run.</b> The matrix may contain zero or negative values, an empty cell or a column that never changes. The warning states the reason.</p><p><b>Is my data safe?</b> Everything is computed in your browser and nothing is sent to a server. On a shared computer, save the work as .krit and clear browser data when you finish.</p><p><b>Can I translate it?</b> Download the language file template from the Project menu, translate it and load it back.</p>"
+   },
+   "sozluk": {
+    "b": "Glossary",
+    "h": ""
+   }
+  }
+ },
+ "terim": {
+  "AHP": "Analytic Hierarchy Process. Derives weights from pairwise comparison of criteria and measures the consistency of the judgements (Saaty, 1980).",
+  "BWM": "Best-Worst Method. Finds weights by comparing only against the most and least important criteria; needs fewer judgements than AHP.",
+  "TOPSIS": "Ranking by similarity to the ideal solution. The alternative closest to the positive ideal and farthest from the negative ideal is best.",
+  "VIKOR": "Compromise ranking method. Combines group utility (S) and individual regret (R) into the Q score; lower Q is better.",
+  "WASPAS": "Combines the weighted sum (WSM) and weighted product (WPM) models with a λ coefficient.",
+  "EDAS": "Evaluation based on distance from the average solution. Sums deviations above and below the average separately.",
+  "COPRAS": "Complex proportional assessment. Takes weighted sums of benefit and cost criteria separately and combines them.",
+  "MOORA": "Multi-objective optimisation on the basis of ratio analysis. Subtracts the cost sum from the benefit sum.",
+  "ARAS": "Additive ratio assessment. Relates each alternative to a hypothetical optimal alternative.",
+  "MABAC": "Multi-attributive border approximation area comparison. Looks at an alternative's distance from the border approximation area.",
+  "MARCOS": "Measurement of alternatives and ranking according to compromise solution; measures utility relative to ideal and anti-ideal solutions.",
+  "SAW": "Simple additive weighting. The weighted sum of normalised values.",
+  "CRITIC": "Gives objective weights from inter-criteria correlation and variability; a criterion that varies a lot and conflicts with others gains weight.",
+  "MEREC": "Computes objective weights from how much performance changes when a criterion is removed.",
+  "Entropy": "Objective weighting method from information theory (Shannon): a criterion that separates the alternatives more gets a higher weight.",
+  "Spearman": "Spearman rank correlation (ρ). Measures agreement of two rankings between -1 and 1; 1 is full agreement.",
+  "ρ": "Spearman rank correlation coefficient: agreement between two rankings (1 full agreement, -1 fully reversed).",
+  "MCDM": "Multi-criteria decision making: evaluating alternatives by weighing several criteria together.",
+  "CR": "Consistency Ratio. In AHP it measures how free of contradiction the judgements are; 0.10 or less is acceptable.",
+  "CI": "Consistency Index = (λmax - n) / (n - 1), where n is the number of criteria.",
+  "RI": "Random Index. The mean CI of random matrices of the same size; CR = CI / RI.",
+  "λmax": "The largest eigenvalue of the comparison matrix. Equals n for a fully consistent matrix; inconsistency grows as it moves away from n.",
+  "ξᴸ": "The optimal value of the BWM linear model. A small value means the judgements are consistent.",
+  "CRᴵ": "Input-based consistency ratio of BWM (Liang et al., 2020). It should stay below the threshold.",
+  "AIJ": "Aggregation of individual judgements: the experts' comparison matrices become one matrix by geometric mean.",
+  "AIP": "Aggregation of individual priorities: each expert's weights are computed separately, then their geometric mean is taken.",
+  "WSM": "Weighted sum model: normalised values are multiplied by weights and summed.",
+  "WPM": "Weighted product model: normalised values raised to the weights are multiplied.",
+  "AAI": "Anti-ideal solution (MARCOS): a hypothetical alternative made of the worst value on every criterion.",
+  "Saaty": "Thomas L. Saaty, the developer of AHP. The 1-9 comparison scale carries his name.",
+  "APA": "The American Psychological Association citation style (7th edition).",
+  "ISNAD": "A citation system used in Turkish academic publishing.",
+  "BibTeX": "The reference record format used by LaTeX and reference software.",
+  "DOI": "Digital Object Identifier. Gives software a permanent citation link.",
+  "CSV": "A plain-text table file separated by commas or semicolons; Excel can open it.",
+  "JSON": "A plain-text data format. The .krit file uses it.",
+  "PNG": "A losslessly compressed image file format.",
+  ".krit": "The Karar Masası work file: matrix, judgements, settings and the tab you were on.",
+  "ENTROPİ": "Entropy method (Turkish spelling ENTROPİ). Objective weighting from information theory (Shannon): a criterion that separates the alternatives more gets a higher weight.",
+  "ÇKKV": "Turkish abbreviation of multi-criteria decision making (MCDM): evaluating alternatives by weighing several criteria together."
  }
 }

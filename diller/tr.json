@@ -23,8 +23,8 @@
  "menuFile": "Dosya",
  "menuTools": "Araçlar",
  "newProject": "Yeni proje",
- "openProject": "Proje dosyası aç",
- "saveProject": "Proje dosyasını indir",
+ "openProject": "Çalışma aç (.krit)",
+ "saveProject": "Çalışmayı kaydet (.krit)",
  "loadSample": "Örnek projeyi aç",
  "importMatrix": "Excel ya da CSV içe aktar",
  "toolSettings": "Ayarlar",
@@ -38,8 +38,8 @@
  "otherTab": "Bu proje başka bir sekmede de açık. Veri kaybını önlemek için bu sekme kilitlendi.",
  "reload": "Yeniden yükle",
  "saved": "Kaydedildi",
- "saveFail": "Tarayıcıya kaydedilemedi. Proje dosyasını indirerek yedek alın.",
- "privacy": "Verileriniz bu tarayıcıdan dışarı çıkmaz: hiçbir sunucuya gönderilmez, yalnızca bu bilgisayarda saklanır. Düzenli olarak proje dosyasını indirip yedek alın.",
+ "saveFail": "Tarayıcıya kaydedilemedi. Çalışmayı .krit dosyası olarak kaydedip yedek alın.",
+ "privacy": "Verileriniz bu tarayıcıdan dışarı çıkmaz: hiçbir sunucuya gönderilmez, yalnızca bu bilgisayarda saklanır. Çalışmanızı düzenli olarak .krit dosyasına kaydedip yedek alın.",
  "credit": "Sistem mimarı ve geliştirici:",
  "license": "MIT Lisansı",
  "close": "Kapat",
@@ -53,12 +53,12 @@
  "yes": "evet",
  "no": "hayır",
  "copied": "Panoya kopyalandı.",
- "newProjectQ": "Geçerli proje tarayıcıdan silinip yerine boş proje açılacak. Önce proje dosyasını indirdiğinizden emin olun. Devam edilsin mi?",
+ "newProjectQ": "Geçerli çalışma tarayıcıdan silinip yerine boş çalışma açılacak. Önce çalışmayı kaydettiğinizden emin olun. Devam edilsin mi?",
  "sampleQ": "Geçerli projenin yerine örnek proje açılacak. Geri almak için Ctrl+Z kullanabilirsiniz. Devam edilsin mi?",
  "sampleLoaded": "Örnek proje açıldı. Veriler kurgusaldır.",
- "projectSaved": "Proje dosyası indirildi.",
- "projectLoaded": "Proje açıldı.",
- "badProject": "Bu bir Karar Masası proje dosyası değil.",
+ "projectSaved": "Çalışma .krit dosyası olarak kaydedildi. Bu dosyayla kaldığınız yerden devam edebilirsiniz.",
+ "projectLoaded": "Çalışma yüklendi. Kaldığınız yerden devam edebilirsiniz.",
+ "badProject": "Bu bir Karar Masası çalışma dosyası (.krit) değil.",
  "badFile": "Dosya okunamadı.",
  "pngFail": "Resim oluşturulamadı.",
  "decimals": "Gösterilecek ondalık basamak",
@@ -515,7 +515,7 @@
   "genel": "Karar Masası nasıl kullanılır?"
  },
  "helpBody": {
-  "genel": "<p><b>1. Karar matrisi.</b> Satırlar alternatifler, sütunlar kriterlerdir. Her kriterin altında <b>Fayda</b> (yüksek değer iyi) ya da <b>Maliyet</b> (düşük değer iyi) seçin. Excel'den bir bloğu kopyalayıp herhangi bir hücreye yapıştırabilir ya da <b>Tablo yapıştır</b> ile başlıklarıyla birlikte alabilirsiniz.</p><p><b>2. Ağırlıklar.</b> Bir yöntem seçin. AHP ve BWM'de her uzman için yargıları girin; nesnel yöntemler (ENTROPİ, CRITIC, standart sapma, MEREC) matristen kendiliğinden hesaplanır.</p><p><b>3. Sıralama.</b> Kullanmak istediğiniz yöntemleri işaretleyin. Ana yöntem, özette ve raporda öne çıkan yöntemdir.</p><p><b>4. Karşılaştırma ve duyarlılık.</b> Yöntemlerin ne kadar uyuştuğunu ve ağırlıklar değişince sonucun ne kadar oynadığını görün.</p><p><b>5. Rapor.</b> Word raporu, Excel çalışma kitabı ve yöntem bölümü taslağı alın.</p><p>Bütün işler bu tarayıcıda kaydedilir. Başka bilgisayara taşımak ya da yedeklemek için <b>Proje &gt; Proje dosyasını indir</b> kullanın. <kbd>Ctrl</kbd>+<kbd>Z</kbd> geri alır.</p>"
+  "genel": "<p><b>1. Karar matrisi.</b> Satırlar alternatifler, sütunlar kriterlerdir. Her kriterin altında <b>Fayda</b> (yüksek değer iyi) ya da <b>Maliyet</b> (düşük değer iyi) seçin. Excel'den bir bloğu kopyalayıp herhangi bir hücreye yapıştırabilir ya da <b>Tablo yapıştır</b> ile başlıklarıyla birlikte alabilirsiniz.</p><p><b>2. Ağırlıklar.</b> Bir yöntem seçin. AHP ve BWM'de her uzman için yargıları girin; nesnel yöntemler (ENTROPİ, CRITIC, standart sapma, MEREC) matristen kendiliğinden hesaplanır.</p><p><b>3. Sıralama.</b> Kullanmak istediğiniz yöntemleri işaretleyin. Ana yöntem, özette ve raporda öne çıkan yöntemdir.</p><p><b>4. Karşılaştırma ve duyarlılık.</b> Yöntemlerin ne kadar uyuştuğunu ve ağırlıklar değişince sonucun ne kadar oynadığını görün.</p><p><b>5. Rapor.</b> Word raporu, Excel çalışma kitabı ve yöntem bölümü taslağı alın.</p><p>Bütün işler bu tarayıcıda kaydedilir. Başka bilgisayara taşımak ya da yedeklemek için <b>Proje &gt; Çalışmayı kaydet (.krit)</b> kullanın. <kbd>Ctrl</kbd>+<kbd>Z</kbd> geri alır.</p>"
  },
  "ipucu": {
   "matris": "<p>Karar matrisinde her satır bir <b>alternatif</b> (seçenek), her sütun bir <b>kriter</b>dir (ölçüt). Hücreye alternatifin o kriterdeki değeri yazılır.</p><p>Nitel kriterleri 1-10 gibi bir puanla sayısallaştırabilirsiniz.</p>",
@@ -550,5 +550,102 @@
   "y_mabac": "<p>Her kriter için alternatiflerin geometrik ortalamasından bir sınır alanı (G) bulunur. Alternatifin bu sınıra toplam uzaklığı S yüksek olan iyidir.</p>",
   "y_marcos": "<p>İdeal (AI) ve anti-ideal (AAI) çözümler matrise eklenir. Alternatiflerin bu ikisine göre fayda dereceleri (K⁺, K⁻) bir fayda fonksiyonunda birleşir; f(K) yüksek olan iyidir.</p>",
   "y_saw": "<p>Doğrusal normalleştirilmiş değerlerin ağırlıklı toplamı. En basit yöntemdir; diğerleri için bir karşılaştırma noktasıdır.</p>"
+ },
+ "tabHelp": "Yardım",
+ "loadWorkQ": "Geçerli çalışmanın yerine dosyadaki çalışma açılacak. Geri almak için Ctrl+Z kullanabilirsiniz. Devam edilsin mi?",
+ "nextStep": "Sonraki: {0}",
+ "prevStep": "Önceki: {0}",
+ "terimYok": "Açıklama bulunamadı.",
+ "helpSearch": "Yardımda ara",
+ "yardim": {
+  "baslik": "Yardım merkezi",
+  "alt": "Karar Masası'nı adım adım öğrenin. Aradığınız konuyu yazın ya da soldaki başlıklardan seçin.",
+  "sonucYok": "Aramanızla eşleşen bir konu bulunamadı.",
+  "agirlikYontemleri": "Ağırlık yöntemleri",
+  "siralamaYontemleri": "Sıralama yöntemleri",
+  "bolumler": {
+   "basla": {
+    "b": "Başlarken",
+    "h": "<p>Karar Masası, birden çok ölçüte göre alternatifleri karşılaştırmak ve sıralamak için hazırlanmış, kurulum gerektirmeyen bir çalışma masasıdır. Verileriniz bu bilgisayardan çıkmaz.</p><p><b>En kısa yol:</b> Proje menüsünden <b>Örnek projeyi aç</b> deyin, sekmeleri soldan sağa gezin; sonra kendi verinizle <b>Yeni proje</b> başlatın.</p><ol><li><b>Karar matrisi.</b> Alternatifleri ve kriterleri girin, her kriterin yönünü seçin.</li><li><b>Ağırlıklar.</b> Kriterlerin önemini belirleyin.</li><li><b>Sıralama.</b> Yöntemleri seçin, alternatiflerin sırasını görün.</li><li><b>Karşılaştırma.</b> Yöntemlerin birbiriyle uyumunu inceleyin.</li><li><b>Duyarlılık.</b> Ağırlıklar değişince sonucun dayanıklılığını sınayın.</li><li><b>Rapor.</b> Word raporunu, Excel dosyasını ve yöntem bölümü taslağını alın.</li></ol><p><b>Küçük yardımcılar</b></p><ul><li>Altı noktalı çizili terimlerin (AHP, CR, TOPSIS gibi) üzerine gelince kısa açıklaması görünür.</li><li>Başlıkların yanındaki <b>?</b> düğmesi o bölümün ayrıntısını açar.</li><li><kbd>Ctrl</kbd>+<kbd>Z</kbd> son işlemi geri alır, <kbd>Ctrl</kbd>+<kbd>Y</kbd> yineler.</li><li>Çalışmanızı istediğiniz an üst çubuktaki disket simgesiyle bir <code>.krit</code> dosyasına kaydedin; sonra o dosyayla kaldığınız yerden devam edin.</li></ul>"
+   },
+   "dosya": {
+    "b": "Çalışmayı kaydetme ve sürdürme",
+    "h": "<p>Karar Masası çalışmanızı iki yerde saklar.</p><p><b>1. Tarayıcı otomatik kaydı.</b> Her değişiklikten kısa süre sonra bu tarayıcıya kaydedilir. Sayfayı kapatıp açsanız da kaldığınız yerden devam edersiniz. Tarayıcı verisini temizlerseniz ya da başka bir bilgisayara geçerseniz bu kayıt gider.</p><p><b>2. Çalışma dosyası (.krit).</b> Üst çubuktaki disket simgesine ya da <b>Proje &gt; Çalışmayı kaydet (.krit)</b> seçeneğine basın. Dosyada matris, ağırlık yargıları, yöntem seçimleri, ayarlar, günlük ve o an hangi sekmede, hangi uzmanda olduğunuz bulunur.</p><p><b>Kaldığınız yerden devam.</b> <b>Proje &gt; Çalışma aç (.krit)</b> ile ya da dosyayı sayfaya sürükleyip bırakarak yükleyin. Karar Masası sizi kaydettiğiniz sekmeye götürür.</p><ul><li>Dosyayı e-postayla, bulut diskle ya da USB bellekle başka bir bilgisayara taşıyabilirsiniz.</li><li>Eski sürümlerdeki <code>.karar.json</code> proje dosyaları da açılır.</li><li>Dosya düz metindir (JSON); yalnızca sizin girdiğiniz veriyi içerir ve hiçbir yere gönderilmez.</li><li>Bir çalışmayı yüklemek mevcut çalışmanın yerine geçer; yüklemeden önce size sorulur. Geri almak için <kbd>Ctrl</kbd>+<kbd>Z</kbd> kullanabilirsiniz.</li><li>Ortak bilgisayarda işiniz bitince çalışmayı kaydedin ve tarayıcı verisini silin.</li></ul>"
+   },
+   "matris": {
+    "b": "Karar matrisi",
+    "h": "<p>Satırlar <b>alternatifler</b> (seçenekleriniz), sütunlar <b>kriterlerdir</b> (ölçütleriniz). Hücrelere ölçülmüş ya da puanlanmış değerleri yazın.</p><p><b>Yön.</b> Her kriterin altındaki düğmeyle <b>Fayda</b> (değer büyüdükçe iyi, örneğin kalite puanı) ya da <b>Maliyet</b> (değer küçüldükçe iyi, örneğin fiyat ve uzaklık) seçin. Yanlış yön sonucu tersine çevirir.</p><p><b>Veri girmenin yolları</b></p><ul><li>Hücreye yazın; <kbd>Enter</kbd> ve alt ok aşağı, yön okları yan hücrelere geçer. Son satırda <kbd>Enter</kbd> yeni alternatif ekler.</li><li>Excel'de bir bloğu kopyalayıp bir hücreye yapıştırın; gerekirse satır ve sütun eklenir.</li><li><b>Tablo yapıştır</b> başlıklarla birlikte alır; <b>Excel ya da CSV içe aktar</b> .xlsx ve .csv dosyası okur. Başlıktan sonraki satıra Fayda ya da Maliyet yazarsanız yönler kendiliğinden tanınır.</li></ul><p><b>Dikkat.</b> Boş hücre varsa hesap yapılmaz. Bazı yöntemler sıfır ya da negatif değer kabul etmez; bu durumda ekranda hangi yöntemin neden çalışmadığı yazar. Ondalık için virgül ya da nokta kullanabilirsiniz.</p>"
+   },
+   "agirlik": {
+    "b": "Ağırlıklar",
+    "h": "<p>Ağırlık, bir kriterin kararda ne kadar önemli olduğunu gösterir; toplamları 1'dir. Üç aile vardır:</p><ul><li><b>Temel:</b> Eşit ağırlık. Her kriter aynı önemdedir.</li><li><b>Öznel (uzman yargısı):</b> Doğrudan puan, AHP, BWM. Önemi siz ya da uzmanlar belirlersiniz.</li><li><b>Nesnel (veriden):</b> ENTROPİ, CRITIC, standart sapma, MEREC. Önem, matristeki veri dağılımından hesaplanır; uzman gerekmez.</li></ul><p><b>AHP ile.</b> Uzman ekleyin; her kriter çiftinde hangisinin kaç kat önemli olduğunu 1-9 ölçeğinde işaretleyin. Ölçeğin ortası \"eşit önemli\"dir; sol yarı soldaki kriteri, sağ yarı sağdaki kriteri tercih eder. Üstte tutarlılık oranı <b>CR</b> görünür; 0,10 ve altı kabul edilir. Üstündeyse Karar Masası hangi yargıyı değiştirmeniz gerektiğini önerir. Birden çok uzmanın yargıları <b>AIJ</b> (matrisleri birleştir) ya da <b>AIP</b> (ağırlıkları birleştir) ile toplanır.</p><p><b>BWM ile.</b> Önce en önemli (en iyi) ve en az önemli (en kötü) kriteri seçin; sonra diğer kriterleri bu ikisiyle 1-9 ölçeğinde karşılaştırın. AHP'ye göre çok daha az yargı gerekir. Tutarlılık için ξᴸ ve CRᴵ gösterilir.</p><p><b>Hangisini seçmeli?</b> Uzman görüşü varsa AHP ya da BWM; yoksa nesnel yöntemlerden biri ya da birkaçı. Sonuçlar birbirinden çok ayrılıyorsa Karşılaştırma ve Duyarlılık sekmelerine bakın.</p>"
+   },
+   "sirala": {
+    "b": "Sıralama",
+    "h": "<p>Seçtiğiniz her yöntem, ağırlıkları ve matrisi kullanarak alternatifleri puanlar ve sıralar. Birden çok yöntem seçmek, sonucun yönteme bağlı olup olmadığını görmenizi sağlar.</p><ul><li><b>Ana yöntem:</b> özet kartında, grafikte ve raporda öne çıkan yöntemdir.</li><li><b>Ara tablolar:</b> her yöntemin altındaki <b>Ara adımları göster</b> bölümünde normalleştirmeden son puana kadar bütün tablolar bulunur. Makalenize eklemek için de uygundur.</li><li><b>VIKOR v</b> ve <b>WASPAS λ</b> yöntemlerin kendi parametreleridir; yaygın değer 0,5'tir.</li></ul>"
+   },
+   "karsilastir": {
+    "b": "Karşılaştırma",
+    "h": "<p>Yöntemler aynı veriyi farklı varsayımlarla işler; sıralar birebir aynı çıkmayabilir. Bu sekmede her alternatifin yöntemlere göre sırası, ortalama sırası ve genel sırası görünür.</p><p><b>Spearman</b> sıra korelasyonu iki yöntemin sıralarının uyumunu gösterir: 1 tam uyum, 0 ilişki yok, negatif değer ters sıralamadır. 0,8 üstü genellikle güçlü uyum sayılır.</p>"
+   },
+   "duyarlilik": {
+    "b": "Duyarlılık analizi",
+    "h": "<p>Ağırlıklar kesin değildir. Bu sekme her kriterin ağırlığını sırayla, belirttiğiniz oranlarda (örneğin -50, -25, 25, 50 yüzde) değiştirir, kalan ağırlıkları orantılı ayarlar ve sıralamanın nasıl oynadığını gösterir.</p><ul><li>Sarı hücreler sırası değişen alternatiflerdir.</li><li>\"İlk sırada kaldı\" sayısı yüksekse sonucunuz sağlamdır.</li><li>ρ, değişen sıralamanın ilk sıralamayla Spearman uyumudur.</li></ul>"
+   },
+   "rapor": {
+    "b": "Rapor ve çıktılar",
+    "h": "<ul><li><b>Word raporu:</b> numaralı tablolar, grafikler, yöntem bölümü ve APA kaynakçası.</li><li><b>Excel çalışma kitabı:</b> her yöntem ayrı sayfada, sayılar değer olarak.</li><li><b>Sonuçlar (CSV):</b> yalnızca puanlar ve sıralar.</li><li><b>Yöntem bölümü taslağı:</b> kopyalayıp makalenize yapıştırabilir, kendi cümlelerinizle düzenleyebilirsiniz.</li><li><b>Atıf:</b> ana sayfadaki Atıf düğmesi APA, ISNAD ve BibTeX biçimlerini verir.</li></ul>"
+   },
+   "sss": {
+    "b": "Sık sorulanlar",
+    "h": "<p><b>CR 0,10'u aştı, ne yapmalıyım?</b> Uyarıda gösterilen karşılaştırmayı gözden geçirin; önerilen değere yaklaşmak tutarlılığı artırır. Birden çok uzman varsa uzmanları tek tek denetleyin.</p><p><b>Yöntemler farklı birinci verdi.</b> Bu olağandır. Ortalama sıraya ve Spearman değerlerine bakın; duyarlılık analizi hangi alternatifin kararlı olduğunu gösterir.</p><p><b>Bir yöntem çalışmıyor.</b> Matriste sıfır ya da negatif değer, boş hücre veya hiç değişmeyen bir sütun olabilir. Uyarı nedeni yazar.</p><p><b>Verilerim güvende mi?</b> Her şey tarayıcınızda hesaplanır, sunucuya gönderilmez. Ortak bir bilgisayarda işiniz bitince çalışmayı .krit olarak kaydedip tarayıcı verisini silin.</p><p><b>Başka dile çevirebilir miyim?</b> Proje menüsünden dil dosyası şablonunu indirip çevirin, sonra geri yükleyin.</p>"
+   },
+   "sozluk": {
+    "b": "Sözlük",
+    "h": ""
+   }
+  }
+ },
+ "terim": {
+  "AHP": "Analitik Hiyerarşi Süreci. Kriterlerin ikili karşılaştırmasından ağırlık çıkarır ve yargıların tutarlılığını ölçer (Saaty, 1980).",
+  "BWM": "En İyi-En Kötü Yöntemi (Best-Worst Method). Yalnızca en önemli ve en az önemli kriterle karşılaştırma yaparak ağırlık bulur; AHP'den az yargı ister.",
+  "TOPSIS": "İdeal çözüme benzerliğe göre sıralama. Pozitif ideale en yakın, negatif ideale en uzak alternatif en iyidir.",
+  "VIKOR": "Uzlaşık sıralama yöntemi. Grup yararını (S) ve en kötü bireysel pişmanlığı (R) birleştirip Q puanını verir; düşük Q iyidir.",
+  "WASPAS": "Ağırlıklı toplam (WSM) ve ağırlıklı çarpım (WPM) modellerini λ katsayısıyla birleştirir.",
+  "EDAS": "Ortalama çözümden uzaklığa göre değerlendirme. Ortalamanın üstündeki ve altındaki sapmaları ayrı ayrı toplar.",
+  "COPRAS": "Karmaşık orantılı değerlendirme. Fayda ve maliyet kriterlerinin ağırlıklı toplamlarını ayrı alıp birleştirir.",
+  "MOORA": "Oran analizine dayalı çok hedefli optimizasyon. Fayda toplamından maliyet toplamını çıkarır.",
+  "ARAS": "Eklemeli oran değerlendirmesi. Her alternatifi varsayımsal en iyi alternatife oranlar.",
+  "MABAC": "Çok nitelikli sınır yaklaşım alanı karşılaştırması. Alternatifin sınır yaklaşım alanına uzaklığına bakar.",
+  "MARCOS": "İdeal ve anti-ideal çözümlere göre fayda derecelerini ölçen yöntem.",
+  "SAW": "Basit toplamsal ağırlıklandırma. Normalleştirilmiş değerlerin ağırlıklı toplamıdır.",
+  "CRITIC": "Kriterler arası korelasyon ve değişkenliğe göre nesnel ağırlık verir; çok değişen ve diğerleriyle çatışan kriter ağırlık kazanır.",
+  "MEREC": "Bir kriter çıkarılınca performansın ne kadar değiştiğine göre nesnel ağırlık hesaplar.",
+  "ENTROPİ": "Bilgi kuramından (Shannon) gelen nesnel ağırlık yöntemi: alternatifleri daha çok ayıran kriter daha ağır olur.",
+  "Spearman": "Spearman sıra korelasyonu (ρ). İki sıralamanın uyumunu -1 ile 1 arasında ölçer; 1 tam uyumdur.",
+  "ρ": "Spearman sıra korelasyon katsayısı: iki sıralama arasındaki uyum (1 tam uyum, -1 tam ters).",
+  "ÇKKV": "Çok kriterli karar verme: birden çok ölçütü birlikte tartarak alternatifleri değerlendirme.",
+  "CR": "Tutarlılık oranı (Consistency Ratio). AHP'de yargıların çelişkisizliğini ölçer; 0,10 ve altı kabul edilir.",
+  "CI": "Tutarlılık göstergesi (Consistency Index) = (λmax - n) / (n - 1). n kriter sayısıdır.",
+  "RI": "Rastgele gösterge (Random Index). Aynı boyutlu rastgele matrislerin ortalama CI değeridir; CR = CI / RI.",
+  "λmax": "Karşılaştırma matrisinin en büyük özdeğeri. Tam tutarlı matriste n'ye eşittir; n'den uzaklaştıkça tutarsızlık artar.",
+  "ξᴸ": "BWM doğrusal modelinin en iyi değeri. Küçük olması yargıların tutarlı olduğunu gösterir.",
+  "CRᴵ": "BWM girdiye dayalı tutarlılık oranı (Liang vd., 2020). Eşik değerin altında olması istenir.",
+  "AIJ": "Bireysel yargıların toplulaştırılması: uzmanların karşılaştırma matrisleri geometrik ortalamayla tek matris olur.",
+  "AIP": "Bireysel önceliklerin toplulaştırılması: her uzmanın ağırlıkları ayrı hesaplanır, sonra geometrik ortalaması alınır.",
+  "WSM": "Ağırlıklı toplam modeli: normalleştirilmiş değerler ağırlıkla çarpılıp toplanır.",
+  "WPM": "Ağırlıklı çarpım modeli: normalleştirilmiş değerlerin ağırlık kuvvetleri çarpılır.",
+  "AAI": "Anti-ideal çözüm (MARCOS): her kriterde en kötü değerlerden oluşan varsayımsal alternatif.",
+  "Saaty": "Thomas L. Saaty, AHP'nin geliştiricisi. 1-9 karşılaştırma ölçeği onun adıyla anılır.",
+  "APA": "Amerikan Psikoloji Derneği'nin kaynak gösterme biçimi (7. sürüm).",
+  "ISNAD": "İlmî Neşir Atıf Düzeni: Türkçe akademik yayınlarda kullanılan kaynak gösterme sistemi.",
+  "BibTeX": "LaTeX ve kaynakça yazılımlarının kullandığı kaynak kaydı biçimi.",
+  "DOI": "Sayısal nesne tanımlayıcısı (Digital Object Identifier). Yazılıma kalıcı atıf bağlantısı verir.",
+  "CSV": "Virgül ya da noktalı virgülle ayrılmış düz metin tablo dosyası; Excel açabilir.",
+  "JSON": "Düz metin veri biçimi. .krit dosyası bu biçimdedir.",
+  "PNG": "Kayıpsız sıkıştırılmış resim dosyası biçimi.",
+  ".krit": "Karar Masası çalışma dosyası: matris, yargılar, ayarlar ve kaldığınız sekme.",
+  "Entropy": "Entropi yöntemi (İngilizce yazımı Entropy). Bilgi kuramından (Shannon) gelen nesnel ağırlık yöntemidir: alternatifleri daha çok ayıran kriter daha ağır olur.",
+  "MCDM": "Multi-criteria decision making: çok kriterli karar verme (ÇKKV). Birden çok ölçütü birlikte tartarak alternatifleri değerlendirme."
  }
 }

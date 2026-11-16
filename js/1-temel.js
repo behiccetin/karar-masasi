@@ -1,7 +1,7 @@
 /* Karar Masası · Öğr. Gör. Dr. Behiç ÇETİN · MIT Lisansı */
 
 /* ====================== DURUM ====================== */
-const SURUM='1.0.0';
+const SURUM='1.1.0';
 const KAYIT='kararMasasi.v1';
 const S={P:null,dil:'tr',sekme:'giris',kilit:false,kaydedildi:false,sonuc:null};
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];

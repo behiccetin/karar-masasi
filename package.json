@@ -1,6 +1,6 @@
 {
   "name": "karar-masasi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Çok kriterli karar verme için ücretsiz, kurulumsuz araç",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@fontsource/ibm-plex-sans": "^5.3.0",
     "@tailwindcss/cli": "^4.3.5",
     "daisyui": "^5.8.0",
     "tailwindcss": "^4.3.5"
